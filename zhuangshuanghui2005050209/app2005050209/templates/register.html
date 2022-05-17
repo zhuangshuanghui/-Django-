@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}简单表单例子{% endblock %}
+{% block content%}
+<div class="post">
+    <div class="entry">
+        <h1>用户注册</h1>
+        {% if registered %}
+        <strong>感谢注册!</strong>
+        <a href="{% url 'home' %}">返回首页.</a><br />
+        {% else %}
+        <strong>请填写信息!</strong><br />
+        <form id="user_form" method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <!-- as.p每个表单显示为一个段落-->
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            <input type="submit" name="submit" value="注册" />
+        </form>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}登录{% endblock %}
+{% block content%}
+<div class="post">
+    <div class="entry">
+        <h1>用户登录</h1>
+        {% if logined %}
+        <strong>登录成功!</strong>
+        
+        {% else %}        
+        <form id="login_form" method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+            <div class="box">
+                <!-- <p><label>用户名：<input id="username" class="ipt" type="text"></label></p>
+                <p><label>密　码：<input id="passwd" class="ipt" type="password"></label></p>
+                 -->
+                {{login_form.as_p}}
+                <p><input type="submit" name="submit" class="btn" value="登录" />
+                <input type="button" name="zx" class="zx" value="注销" /></p>
+              </div> 
+        </form>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

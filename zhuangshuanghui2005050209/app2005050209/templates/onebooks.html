@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}
+  详情显示
+{% endblock title %}
+
+{% block content %}
+<div class="post">
+    <div class="entry">
+        
+            
+            <div>
+                <h2>书名：{{ article.title }}</h2>
+                
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            <div>
+                <form action="#" method="post">
+                    <strong>书籍介绍：</strong><br>
+                    <textarea name="description" cols="60" rows="10">{{ article.content}}</textarea>
+                </form>
+                
+            </div>
+
+            <div>
+             <p align='right'>id:{{article.id}}</p>
+            </div>
+            <div><p align='right'>文章分类:<strong>{{category.name}}</strong></p></div>
+            
+            
+        
+        
+    </div>
+</div>
+
+{% endblock content %}

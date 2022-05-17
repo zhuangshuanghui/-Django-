@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}添加文章{% endblock  %}
+
+{% block content %}
+<div class="post">
+  <div class="entry">
+      <form action="/addbook/" method="post">
+    {% csrf_token %}
+    {% for field in form.visible_fields %}
+    <div class="fieldWrapper">
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+
+    </div>
+
+      
+    {% endfor %}
+    <input type="submit" value="提交">
+</form>
+  {{result}}
+  </div>
+</div>
+{% endblock  %}

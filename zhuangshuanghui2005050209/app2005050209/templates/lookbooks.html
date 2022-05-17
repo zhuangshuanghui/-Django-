@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+  主页面
+{% endblock title %}
+{% block content %}
+<div class="post">
+    <table>
+    <tr>
+    <th><h2>书名</h2></th>
+    <th><h2>操作</h2></th>
+    </tr>
+    {% for p in article %}
+    <tr>
+    <td><a href="/onebooks/{{p.id}}">{{p.title}}</a></td>
+    <td><a href="/editbooks/{{p.id}}">编辑</a>
+    <a href="/deletebooks/{{p.id}}">删除</a>  
+    
+    </td>
+    </tr>
+    {% endfor %}
+    </table>
+    </div>
+{% endblock content %}

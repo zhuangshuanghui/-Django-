@@ -1,0 +1,61 @@
+
+<html lang="en">
+<head>
+	<title>{% block title%}网页标题{% endblock %}</title>
+	<base href="/">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+	<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	
+	
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header-wrapper">
+			<!--header-->
+			<div id="header">          <!--header-->
+				<div id="logo">  	<!--logo-->
+					<h1><a href="/lookbooks">个人主页</a></h1>
+				</div>
+				<div id="menu">
+					<ul>
+						<li class="current_page_item"><a href="#">首页</a></li>
+						<li><a href="/addpage/">写博客</a></li>
+						<li><a href="#">图片</a></li>
+						<li><a href="#">关于</a></li>			
+						<li><a href="#">联系我们</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- end #header -->
+		<div id="page">
+			<div id="page-bgtop">
+				<div id="page-bgbtm">
+					<div id="content">
+							{% block content%}内容 {% endblock %}						
+						<div style="clear: both;">&nbsp;</div>
+					</div>
+					<!-- end #content -->
+					<!-- #sidebar-->
+					{% include "nav.html" %}
+					<!-- end #sidebar -->
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+			</div>
+		</div>
+		<!-- end #page -->
+	</div>
+	<!-- #footer-->
+	{% include 'foot.html' %}
+	<!-- end #footer -->
+</body>
+
+</html>
+</body>
+
+
+</html>

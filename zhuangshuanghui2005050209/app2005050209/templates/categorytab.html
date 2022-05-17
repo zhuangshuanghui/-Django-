@@ -1,0 +1,10 @@
+<ul>
+    {% if categories %}
+    {% for cate in categories %}
+    <li><a href="{%url 'fenleibooks' cate.id %}">
+        {{cate.name}}
+    </a></li>
+      
+    {% endfor %}
+    {% endif %}
+</ul>

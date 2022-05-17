@@ -1,0 +1,22 @@
+{% load category_tags %}
+<div id="sidebar">
+    <ul>
+        
+        
+        <li>
+            <h2>分类列表</h2>
+            
+            {% block sidebar_block %}
+            {% category_tags %}
+            {% endblock %}
+        </li>
+        
+
+        <li>
+            <h2>方法</h2>
+            <ul><li><a href="/allbooks/1">显示全部</a></li>
+                <li><a href="/addbook/">添加文章</a></li></ul>
+            
+        </li>
+    </ul>   
+</div>

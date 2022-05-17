@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}全部文章{% endblock %}
+{% block content%}
+{% for p in pageList %}
+<div class="post">
+    <h2 class="title"><a href="/onebooks/{{p.id}}">{{p.title}}</a></h2>
+    <p class="meta"><span class="posted">id: &nbsp;<a href="#">{{p.id}}</a></span></p>
+    <div class="entry">
+        <p>{{p.content}}</p>
+    </div>
+    <p class="meta"><a href="/editbooks/{{p.id}}">编辑</a></p>
+</div>
+{% endfor %}
+<div class="post">
+    <div class="pagination">
+        <span class="step-links">
+           
+           
+            {% if pageList.has_previous %}
+            <a href="/allbooks/1">&laquo; 首页</a>
+            <a href="/allbooks/{{ pageList.previous_page_number }}">上一页</a>
+            {% endif %}
+
+            <span class="current">
+                第 {{ pageList.number }} 页，共 {{ pageList.paginator.num_pages }}页.
+            </span>
+
+            {% if pageList.has_next %}
+            <a href="/allbooks/{{ pageList.next_page_number }}">下一页</a>
+            <a href="/allbooks/{{ pageList.paginator.num_pages }}">末页 &raquo;</a>
+            {% endif %}
+            
+        </span>
+    </div>
+</div>
+{% endblock %}

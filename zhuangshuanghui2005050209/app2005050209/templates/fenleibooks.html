@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}分类文章{% endblock %}
+{% block content%}
+{% for p in article %}
+<div class="post">
+    <h2 class="title"><a href="/onebooks/{{p.id}}">{{p.title}}</a></h2>
+    <p class="meta"><span class="posted">id: &nbsp;<a href="#">{{p.id}}</a></span></p>
+    <div class="entry">
+        <p>{{p.content}}</p>
+    </div>
+    <p class="meta"><a href="/editbooks/{{p.id}}">编辑</a></p>
+</div>
+{% endfor %}
+{% endblock %}
